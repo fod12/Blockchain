@@ -1,0 +1,36 @@
+{
+  "name": "chips-dex",
+  "author": "author",
+  "description": "CHiPS-dex is a Proof of Concept (PoC) for facilitation of statewide Data Exchange Framework between various state departments and trigger-based protocols which includes process of initiating a new platform to store and exchange highly confidential data related to citizens of the Chhattisgarh State among various state departments under prevailing data privacy laws of the state. ",
+  "version": "0.0.2-deploy.12",
+  "devDependencies": {
+    "browserfs": "^1.2.0",
+    "chai": "^3.5.0",
+    "composer-admin": "latest",
+    "composer-cli": "latest",
+    "composer-client": "latest",
+    "composer-connector-embedded": "latest",
+    "eslint": "^3.6.1",
+    "istanbul": "^0.4.5",
+    "jsdoc": "^3.4.1",
+    "mkdirp": "^0.5.1",
+    "mocha": "^3.2.0",
+    "moment": "^2.19.3"
+  },
+  "keywords": [],
+  "license": "Apache 2.0",
+  "repository": {
+    "type": "e.g. git",
+    "url": "URL"
+  },
+  "scripts": {
+    "deploy": "./scripts/deploy.sh",
+    "doc": "jsdoc --pedantic --recurse -c jsdoc.conf",
+    "lint": "eslint .",
+    "postlicchk": "npm run doc",
+    "postlint": "npm run licchk",
+    "prepublish": "mkdirp ./dist && composer archive create  --sourceType dir --sourceName . -a ./dist/unnamed-network.bna",
+    "pretest": "npm run lint",
+    "test": "mocha --recursive"
+  }
+}
